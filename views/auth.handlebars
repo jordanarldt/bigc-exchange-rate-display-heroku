@@ -1,0 +1,9 @@
+{{#if authorized }}
+<p>Application successfully installed.<br>
+  You can either <a href="https://store-{{ storeHash }}.mybigcommerce.com/manage/app/26370">Launch the application</a>,
+  or go to your <a href="https://store-{{ storeHash }}.mybigcommerce.com/manage/marketplace/apps/my-apps">My Apps</a>
+  panel.
+</p>
+{{else}}
+<p>The authorization failed. Please try re-installing the application.</p>
+{{/if}}

@@ -1,0 +1,32 @@
+<script>
+  function copyText() {
+    var codeBox = document.getElementById("codebox");
+    codeBox.select();
+    codeBox.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+  }
+</script>
+
+{{#if credentialsFound}}
+<p>Please add the following code into your template files where you want to display the exchange rate:</p>
+
+<textarea readonly class="codebox" id="codebox" cols="95" rows="7">
+\{{#if currency_selector.active_currency_id '>' 1}}
+<ul class="navUser-section">
+  <li class="navUser-item">
+    <span class="navUser-action" style="pointer-events: none; padding-left: 1px;">Exchange Rate: <span id="exchangeRate_display"></span></span>
+  </li>
+</ul>
+\{{/if}}</textarea>
+<button class="btn btn-primary" onclick="copyText()">Copy Code</button>
+<br /><br />
+<p>
+  Works well in <strong>templates/components/common/currency-selector.html</strong> right before the "\{{/if}}" in the
+  last
+  line.<br />
+  Please see this <a href="./images/instructions.png" target="_blank">example
+    screenshot</a>
+</p>
+{{else}}
+<p>There was an error reading the store credentials. Please reinstall the application.</p>
+{{/if}}

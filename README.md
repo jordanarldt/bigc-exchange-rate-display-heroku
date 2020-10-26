@@ -1,2 +1,2 @@
-# bigc-exchange-rate-display-heroku
+# bigcommerce-exchange-rate-display
 Created with CodeSandbox
